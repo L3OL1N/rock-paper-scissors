@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    button{
+        width: 100px;
+        height: 20px;
+        color: #000;
+    }
+}

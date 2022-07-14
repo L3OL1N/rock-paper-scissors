@@ -57,4 +57,19 @@ function game(){
     }
 }
 
-game();
+const btn = document.querySelectorAll("button");
+btn.forEach(Element =>{
+    Element.addEventListener("click", event=>{
+         playerSelect(this); 
+        })
+    } 
+);
+//btn.forEach(Element.addEventListener("click", function(event){ alert("Hello"); }) );
+
+
+function playerSelect(text){
+    playerSelection = text.ineerText;
+    console.log(1);
+    return 0;
+}
+//game();
