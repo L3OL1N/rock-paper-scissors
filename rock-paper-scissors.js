@@ -36,40 +36,49 @@ var playerSelection = "";
 var computerSelection = computerPlay();
 var PlayerPoint = 0;
 var PcPoint = 0;
-
-function game(){
-    for(let i = 1; i<=5; i++){
-        do{
-            playerSelection = prompt("Round "+i+"\n"+"rock paper scissors ?").toLowerCase();
-        }
-        while(playerSelection === "");
-        console.log(playRound(playerSelection, computerSelection));
-        computerSelection = computerPlay();
-    }
+var winner = document.getElementsByClassName("winner");
+console.log(winner[0].innerHTML);
+function game(playerSelection, computerSelection){
+    //console.log("You :"+playerSelection);
+    //console.log("PC :"+computerSelection);
+    playRound(playerSelection, computerSelection);
+    
     if(PlayerPoint > PcPoint){
-        alert("You Win!!!"+"\n"+PlayerPoint+":"+PcPoint);
+        return roundWinner = "You win";
     }
     else if(PcPoint > PlayerPoint){
-        alert("PC Win!!!"+"\n"+PlayerPoint+":"+PcPoint);
+        return roundWinner = "PC win";
     }
     else{
-        alert("Draw"+"\n"+PlayerPoint+":"+PcPoint);
+        return roundWinner = "DRAW";
     }
 }
 
 const btn = document.querySelectorAll("button");
+
 btn.forEach(Element =>{
     Element.addEventListener("click", event=>{
-         playerSelect(this); 
+         btnClick(Element); 
         })
     } 
 );
-//btn.forEach(Element.addEventListener("click", function(event){ alert("Hello"); }) );
 
 
-function playerSelect(text){
-    playerSelection = text.ineerText;
-    console.log(1);
-    return 0;
+function btnClick(Element){
+    playerSelection = Element.value.toLowerCase();
+    computerSelection = computerPlay();
+    game(playerSelection, computerSelection);
+    newDiv.innerHTML = PlayerPoint + "  -  " + PcPoint;
+    winner[0].innerHTML = roundWinner;
 }
-//game();
+var newDiv = document.createElement("div");
+
+function addCount(){
+    var mydiv = document.getElementsByClassName("wrap");
+    var textNode = document.createTextNode("0  -  0");
+    newDiv.appendChild(textNode);
+    newDiv.classList.add("count");
+    mydiv[0].appendChild(newDiv);
+}
+
+addCount();

@@ -5,14 +5,31 @@
 
 .wrap {
   background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   gap: 30px;
 }
-.wrap button {
+.wrap .select {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.wrap .select button {
   width: 100px;
   height: 20px;
   color: #000;
+}
+.wrap .count, .wrap p, .wrap .winner {
+  height: 100%;
+  color: white;
+  font-size: 36px;
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrap p {
+  letter-spacing: 2px;
+  padding-right: 55px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
