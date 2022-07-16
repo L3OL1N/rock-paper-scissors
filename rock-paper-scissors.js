@@ -44,18 +44,15 @@ var pcChoiceText = document.getElementById("PCchoice");
 
 function game(){
     if(PlayerPoint >= 5){
-        btn.forEach(Element =>{
-            Element.removeEventListener("click",btnClick(Element))} 
-        );
+        for(let i = 0; i<btn.length;i++){
+            btn[i].removeEventListener("click",btnClick);
+        }
         alert("You is winner!!!");
     }
     else if(PcPoint >= 5) {
-        btn.forEach(Element =>{
-            Element.removeEventListener("click", event=>{
-                 btnClick(Element); 
-                })
-            } 
-        );
+        for(let i = 0; i<btn.length;i++){
+            btn[i].removeEventListener("click",btnClick);
+        }
         alert("Pc is winner!!!");
     }
 }
@@ -63,10 +60,13 @@ function game(){
 const btn = document.querySelectorAll("button.btn");
 const handler = (PlayerPoint) =>PlayerPoint ++;
 
-btn.forEach(Element =>{Element.addEventListener("click", event=>{
-    btnClick(Element); 
-   })});
+// btn.forEach(Element =>{Element.addEventListener("click", event=>{
+//     btnClick(Element); 
+//    })});
 
+for(let i = 0; i<btn.length;i++){
+    btn[i].addEventListener("click",btnClick);
+}
 console.log("btn[0].Element.value");
 
 var newDiv = document.createElement("div");
@@ -80,9 +80,12 @@ function addCount(){
 }
 
 addCount();
+function btnTest(e){
+    console.log(e.target.value.toLowerCase());
+}
 
-function btnClick(Element){
-    playerSelection = Element.value.toLowerCase();
+function btnClick(e){
+    playerSelection = e.target.value.toLowerCase();
     computerSelection = computerPlay();
     pcChoiceText.innerHTML = "Computer choice : "+ computerSelection.toUpperCase();
     playRound(playerSelection, computerSelection);
