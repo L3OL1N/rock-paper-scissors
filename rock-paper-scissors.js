@@ -47,18 +47,18 @@ function game(){
         for(let i = 0; i<btn.length;i++){
             btn[i].removeEventListener("click",btnClick);
         }
-        alert("You is winner!!!");
+        setTimeout(()=>{alert("You is winner!!!")},"300");
     }
     else if(PcPoint >= 5) {
         for(let i = 0; i<btn.length;i++){
             btn[i].removeEventListener("click",btnClick);
         }
-        alert("Pc is winner!!!");
+        setTimeout(()=>{alert("Pc is winner!!!")},"300");
     }
 }
 
 const btn = document.querySelectorAll("button.btn");
-const handler = (PlayerPoint) =>PlayerPoint ++;
+
 
 // btn.forEach(Element =>{Element.addEventListener("click", event=>{
 //     btnClick(Element); 
