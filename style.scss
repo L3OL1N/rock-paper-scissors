@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -39,11 +40,58 @@
         width: 35%;
     }
     .playerChoice{
-        padding-top: 10px;
+        padding-top: 40px;
     }
     #restart{
         position: absolute;
-        top: 0;
-        right: 0;
+        padding: 5px 10px;
+        top: 5px;
+        right: 5px;
     }
+    #arrow{
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 15px;
+    }
+    h1{
+        position: absolute;
+        top: 100px;
+        left: 35px;
+        color: white;
+        font-family: 'Codystar', cursive;
+        font-size: 44px;
+        transform: rotate(-30deg);
+        animation: animate 1.5s linear infinite alternate;
+    }
+}
+
+@keyframes animate
+{
+    from {
+        text-shadow: 0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #fff,
+                    0 0 40px #fff,
+                    0 0 50px #228dff,
+                    0 0 70px #228dff,
+                    0 0 80px #228dff,
+                    0 0 100px #228dff,
+                    0 0 120px #228dff,
+                    0 0 150px #228dff,
+                    0 0 200px #228dff;
+      }
+      to {
+        text-shadow: 0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px #fff,
+                    0 0 20px #fff,
+                    0 0 25px #228dff,
+                    0 0 35px #228dff,
+                    0 0 40px #228dff,
+                    0 0 50px #228dff,
+                    0 0 60px #228dff,
+                    0 0 75px #228dff,
+                    0 0 100px #228dff;
+      }
 }

@@ -33,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
         return roundWinner="Draw";
     }
 }
+
 var winnerColor = "";
 var roundWinner = "";
 var playerSelection = "";
@@ -41,6 +42,10 @@ var PlayerPoint = 0;
 var PcPoint = 0;
 var winner = document.getElementsByClassName("winner")[0];
 var pcChoiceText = document.getElementById("PCchoice");
+var newDiv = document.createElement("div");
+const restartBtn = document.getElementById("restart");
+const btn = document.querySelectorAll("button.btn");
+const imgArrow = document.getElementById("arrow");
 
 function game(){
     if(PlayerPoint >= 5){
@@ -48,28 +53,16 @@ function game(){
             btn[i].removeEventListener("click",btnClick);
         }
         setTimeout(()=>{alert("You is winner!!!")},"300");
+        imgArrow.style.display = "block";
     }
     else if(PcPoint >= 5) {
         for(let i = 0; i<btn.length;i++){
             btn[i].removeEventListener("click",btnClick);
         }
         setTimeout(()=>{alert("Pc is winner!!!")},"300");
+        imgArrow.style.display = "block";
     }
 }
-
-const btn = document.querySelectorAll("button.btn");
-
-
-// btn.forEach(Element =>{Element.addEventListener("click", event=>{
-//     btnClick(Element); 
-//    })});
-
-for(let i = 0; i<btn.length;i++){
-    btn[i].addEventListener("click",btnClick);
-}
-console.log("btn[0].Element.value");
-
-var newDiv = document.createElement("div");
 
 function addCount(){
     var mydiv = document.getElementsByClassName("wrap")[0];
@@ -77,11 +70,6 @@ function addCount(){
     newDiv.appendChild(textNode);
     newDiv.classList.add("count");
     mydiv.appendChild(newDiv);
-}
-
-addCount();
-function btnTest(e){
-    console.log(e.target.value.toLowerCase());
 }
 
 function btnClick(e){
@@ -94,9 +82,17 @@ function btnClick(e){
     winner.innerHTML = roundWinner;
     game();
 }
-const restartBtn = document.getElementById("restart");
 
+//restart button
 restartBtn.addEventListener("click",function(){
     window.location.reload();
     return false;
 });
+
+//add eventl istener
+for(let i = 0; i<btn.length;i++){
+    btn[i].addEventListener("click",btnClick);
+}
+
+//add count div
+addCount();
