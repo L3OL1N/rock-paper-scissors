@@ -68,7 +68,7 @@
 
 @keyframes animate
 {
-    from {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         text-shadow: 0 0 10px #fff,
                     0 0 20px #fff,
                     0 0 30px #fff,
@@ -81,7 +81,7 @@
                     0 0 150px #228dff,
                     0 0 200px #228dff;
       }
-      to {
+      20%, 24%, 55% {
         text-shadow: 0 0 5px #fff,
                     0 0 10px #fff,
                     0 0 15px #fff,
